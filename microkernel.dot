@@ -1,0 +1,11 @@
+digraph MicrokernelOS {
+    rankdir=TB;
+    
+    node [shape=rectangle];
+    User_Space [label="User Space\n(Services)"];
+    Hardware [label="Hardware"];
+    Microkernel [label="Microkernel\n(IPC, Scheduler, Device Drivers)", shape=box, style=filled, color=lightblue];
+    
+    User_Space -> Microkernel [label="System Calls"];
+    Microkernel -> Hardware [label="Hardware Access"];
+}
